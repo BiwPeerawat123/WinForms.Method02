@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
-            label1 = new Label();
-            txtRadius = new TextBox();
-            lblResult = new Label();
-            btnCircleArea = new Button();
             btnCircumference = new Button();
+            btnCircleArea = new Button();
+            lblResult = new Label();
+            txtRadius = new TextBox();
+            label1 = new Label();
             groupBox2 = new GroupBox();
             txtOutput = new TextBox();
             groupBox1.SuspendLayout();
@@ -56,22 +56,25 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "รูปวงกลม";
             // 
-            // label1
+            // btnCircumference
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(21, 46);
-            label1.Name = "label1";
-            label1.Size = new Size(70, 20);
-            label1.TabIndex = 0;
-            label1.Text = "รัศมีวงกลม";
+            btnCircumference.Location = new Point(473, 33);
+            btnCircumference.Name = "btnCircumference";
+            btnCircumference.Size = new Size(101, 39);
+            btnCircumference.TabIndex = 4;
+            btnCircumference.Text = "เส้นรอบวง";
+            btnCircumference.UseVisualStyleBackColor = true;
+            btnCircumference.Click += btnCircumference_Click;
             // 
-            // txtRadius
+            // btnCircleArea
             // 
-            txtRadius.Location = new Point(120, 39);
-            txtRadius.Multiline = true;
-            txtRadius.Name = "txtRadius";
-            txtRadius.Size = new Size(212, 34);
-            txtRadius.TabIndex = 1;
+            btnCircleArea.Location = new Point(366, 33);
+            btnCircleArea.Name = "btnCircleArea";
+            btnCircleArea.Size = new Size(101, 39);
+            btnCircleArea.TabIndex = 3;
+            btnCircleArea.Text = "พื้นที่";
+            btnCircleArea.UseVisualStyleBackColor = true;
+            btnCircleArea.Click += btnCircleArea_Click;
             // 
             // lblResult
             // 
@@ -84,24 +87,22 @@
             lblResult.Text = "...";
             lblResult.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btnCircleArea
+            // txtRadius
             // 
-            btnCircleArea.Location = new Point(366, 33);
-            btnCircleArea.Name = "btnCircleArea";
-            btnCircleArea.Size = new Size(101, 39);
-            btnCircleArea.TabIndex = 3;
-            btnCircleArea.Text = "พื้นที่";
-            btnCircleArea.UseVisualStyleBackColor = true;
-            btnCircleArea.Click += btnCircleArea_Click;
+            txtRadius.Location = new Point(120, 39);
+            txtRadius.Multiline = true;
+            txtRadius.Name = "txtRadius";
+            txtRadius.Size = new Size(212, 34);
+            txtRadius.TabIndex = 1;
             // 
-            // btnCircumference
+            // label1
             // 
-            btnCircumference.Location = new Point(473, 33);
-            btnCircumference.Name = "btnCircumference";
-            btnCircumference.Size = new Size(101, 39);
-            btnCircumference.TabIndex = 4;
-            btnCircumference.Text = "เส้นรอบวง";
-            btnCircumference.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Location = new Point(21, 46);
+            label1.Name = "label1";
+            label1.Size = new Size(70, 20);
+            label1.TabIndex = 0;
+            label1.Text = "รัศมีวงกลม";
             // 
             // groupBox2
             // 
