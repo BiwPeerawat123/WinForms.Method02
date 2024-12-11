@@ -1,4 +1,5 @@
-﻿using static System.Net.Mime.MediaTypeNames;
+﻿using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace WinForms.Method02
 {
@@ -68,7 +69,112 @@ namespace WinForms.Method02
 
         double Circumference(double radius)  //ส่งค่าไปประมวลผลอย่างเดียว
         {
-            return 2*Math.PI * radius;
+            return 2 * Math.PI * radius;
+        }
+
+        string triangle(string letter = "*", int size = 5)
+        {
+            string result = "";
+            for (int i = 1; i <= size; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    result += letter;
+                }
+                result += Environment.NewLine;
+
+
+            }
+            return result;
+        }
+
+        private void btnTriangle01_Click(object sender, EventArgs e)
+        {
+            //txtOutput.Text = triangle();
+            //txtOutput.Text = triangle(txtLetter.Text);
+            txtOutput.Text = triangle(txtSize.Text, 6);
+        }
+
+        private void txtInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        void ImproveName(ref string name)
+        {
+            name = name.Trim();
+            if (name.Length < 2)
+            {
+                MessageBox.Show("โปรดกรอกชื่อให้ถูกต้อง", "ข้อมูลผิดพลาด");
+                return;
+            }
+
+        }
+
+        private void btnRefParameter_Click(object sender, EventArgs e)
+        {
+            string FName = txtInput.Text;
+            //ImproveName(ref FName);
+            txtInput.Text = ImproveName2(FName);
+
+        }
+
+        string ImproveName2(string name)
+        {
+            name = name.Trim();
+            if (name.Length < 2)
+            {
+                MessageBox.Show("โปรดกรอกชื่อให้ถูกต้อง", "ข้อมูลผิดพลาด");
+
+            }
+            return name;
+
+
+        }
+
+        Boolean ImproveName3(string name, out string x)
+        {
+            x = name.Trim();
+            if (x.Length < 2)
+            {
+                x = "";
+                return false;
+            }
+            return true;
+        }
+
+        private void btnOutputParameter_Click(object sender, EventArgs e)
+        {
+            string Fname = "";
+            if (ImproveName3(txtInput.Text, out Fname))
+            {
+                txtInput.Text = Fname;
+            }
+            else
+            {
+                MessageBox.Show("ข้อมูลผิดพลาด", "โปรดกรอกให้ถูกต้อง");
+            }
+        }
+
+        private void btnArrayParameter_Click(object sender, EventArgs e)
+        {
+            double[] data = new double[] { 1.5, 2.0, 3.25, 0.15 };
+            double summary = sum(data);
+            string result = string.Join("/",data);
+            result += Environment.NewLine;
+            result += summary.ToString();
+            MessageBox.Show(result, "ผลรวมของค่าใน Array");
+
+        }
+
+        double sum(double[] dataArray)
+        {
+            double sum = 0;
+            foreach (double d in dataArray)
+            {
+                sum += d;
+            }
+            return sum;
         }
     }
 }

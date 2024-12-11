@@ -35,7 +35,14 @@
             txtRadius = new TextBox();
             label1 = new Label();
             groupBox2 = new GroupBox();
+            btnOutputParameter = new Button();
+            txtInput = new TextBox();
+            btnRefParameter = new Button();
+            txtSize = new TextBox();
+            txtLetter = new TextBox();
+            btnTriangle01 = new Button();
             txtOutput = new TextBox();
+            btnArrayParameter = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -107,6 +114,12 @@
             // groupBox2
             // 
             groupBox2.BackColor = Color.FromArgb(255, 192, 255);
+            groupBox2.Controls.Add(btnOutputParameter);
+            groupBox2.Controls.Add(txtInput);
+            groupBox2.Controls.Add(btnRefParameter);
+            groupBox2.Controls.Add(txtSize);
+            groupBox2.Controls.Add(txtLetter);
+            groupBox2.Controls.Add(btnTriangle01);
             groupBox2.Controls.Add(txtOutput);
             groupBox2.Location = new Point(12, 202);
             groupBox2.Name = "groupBox2";
@@ -114,6 +127,63 @@
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "ทดสอบ function";
+            // 
+            // btnOutputParameter
+            // 
+            btnOutputParameter.Location = new Point(302, 295);
+            btnOutputParameter.Name = "btnOutputParameter";
+            btnOutputParameter.Size = new Size(259, 44);
+            btnOutputParameter.TabIndex = 6;
+            btnOutputParameter.Text = "ทดสอบ output Parameter";
+            btnOutputParameter.UseVisualStyleBackColor = true;
+            btnOutputParameter.Click += btnOutputParameter_Click;
+            // 
+            // txtInput
+            // 
+            txtInput.Location = new Point(301, 172);
+            txtInput.Multiline = true;
+            txtInput.Name = "txtInput";
+            txtInput.Size = new Size(260, 34);
+            txtInput.TabIndex = 5;
+            txtInput.TextChanged += txtInput_TextChanged;
+            // 
+            // btnRefParameter
+            // 
+            btnRefParameter.Location = new Point(301, 228);
+            btnRefParameter.Name = "btnRefParameter";
+            btnRefParameter.Size = new Size(260, 57);
+            btnRefParameter.TabIndex = 4;
+            btnRefParameter.Text = "ทดสอบ reference parameter";
+            btnRefParameter.UseVisualStyleBackColor = true;
+            btnRefParameter.Click += btnRefParameter_Click;
+            // 
+            // txtSize
+            // 
+            txtSize.Location = new Point(301, 97);
+            txtSize.Name = "txtSize";
+            txtSize.Size = new Size(125, 27);
+            txtSize.TabIndex = 3;
+            txtSize.Text = "5";
+            txtSize.TextAlign = HorizontalAlignment.Center;
+            // 
+            // txtLetter
+            // 
+            txtLetter.Location = new Point(301, 41);
+            txtLetter.Name = "txtLetter";
+            txtLetter.Size = new Size(125, 27);
+            txtLetter.TabIndex = 2;
+            txtLetter.Text = "A";
+            txtLetter.TextAlign = HorizontalAlignment.Center;
+            // 
+            // btnTriangle01
+            // 
+            btnTriangle01.Location = new Point(451, 36);
+            btnTriangle01.Name = "btnTriangle01";
+            btnTriangle01.Size = new Size(123, 36);
+            btnTriangle01.TabIndex = 1;
+            btnTriangle01.Text = "Triangle";
+            btnTriangle01.UseVisualStyleBackColor = true;
+            btnTriangle01.Click += btnTriangle01_Click;
             // 
             // txtOutput
             // 
@@ -124,11 +194,22 @@
             txtOutput.Size = new Size(251, 303);
             txtOutput.TabIndex = 0;
             // 
+            // btnArrayParameter
+            // 
+            btnArrayParameter.Location = new Point(632, 20);
+            btnArrayParameter.Name = "btnArrayParameter";
+            btnArrayParameter.Size = new Size(253, 84);
+            btnArrayParameter.TabIndex = 2;
+            btnArrayParameter.Text = "Parameter แบบ Array";
+            btnArrayParameter.UseVisualStyleBackColor = true;
+            btnArrayParameter.Click += btnArrayParameter_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1029, 618);
+            ClientSize = new Size(914, 618);
+            Controls.Add(btnArrayParameter);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Name = "Form1";
@@ -150,5 +231,12 @@
         private Label lblResult;
         private GroupBox groupBox2;
         private TextBox txtOutput;
+        private TextBox txtSize;
+        private TextBox txtLetter;
+        private Button btnTriangle01;
+        private Button btnRefParameter;
+        private TextBox txtInput;
+        private Button btnOutputParameter;
+        private Button btnArrayParameter;
     }
 }
